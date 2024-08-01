@@ -1,17 +1,24 @@
+// src/App.js
 import React from 'react';
-import ChartComponent from './Component/ChartComponent';
-import MapComponent from './Component/MapComponent';
-import useGpxFileHandler from './hooks/useGpxFileHandler';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Map from './pages/Map';
+import Signup from './pages/Signup';
 
 const App = () => {
-  const { pathCoordinates, data, handleFileChange } = useGpxFileHandler();
-
   return (
     <div>
-      <h1>GPX File with Google Maps and Chart</h1>
-      <input type="file" accept=".gpx" onChange={handleFileChange} />
-      <MapComponent pathCoordinates={pathCoordinates} />
-      <ChartComponent data={data} />
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/map">Map</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+         <Route path="/signup" element={<Signup />} />
+        <Route path="/map" element={<Map />} />
+      </Routes>
     </div>
   );
 };
