@@ -11,7 +11,7 @@ const Home = () => {
     event.preventDefault();
     // 로그인 처리 로직 (여기서는 간단히 페이지 이동)
     if (username && password) {
-      navigate('/map'); // 로그인 성공 시 /map 페이지로 이동
+      navigate('/service'); // 로그인 성공 시 /map 페이지로 이동
     }
   };
 
