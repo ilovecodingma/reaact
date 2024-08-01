@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../CSS/Service.css'; // 스타일을 추가할 CSS 파일을 임포트합니다.
+
 
 const Service = () => {
   const navigate = useNavigate();
@@ -13,11 +15,11 @@ const Service = () => {
   };
 
   return (
-    <div>
+    <div className="service-container">
       <h2>Service Page</h2>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <button onClick={handleMapNavigation}>Go to Map</button>
-        <button onClick={handleChatNavigation}>Go to Chat</button>
+      <div className="button-container">
+        <button className="navigation-button" onClick={handleMapNavigation}>Go to Map</button>
+        <button className="navigation-button" onClick={handleChatNavigation}>Go to Chat</button>
       </div>
     </div>
   );
